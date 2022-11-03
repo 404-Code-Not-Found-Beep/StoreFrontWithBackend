@@ -23,7 +23,7 @@ const Cart = (props) => {
   //change this so we still use cartCtx.totalAmount but change cartCtx to the local storage
   const totalAmountExTax = `£${totalAmountLocal.toFixed(2)}`;
   const tax = `£${(totalAmountLocal * 0.1).toFixed(2)}`;
-  const totalAmountIncTax = `£${(totalAmountLocal * 1.1).toFixed(2)}`;
+  const totalAmountIncTax = `£${(totalAmountLocal * 1.1 + 20).toFixed(2)}`;
 
   const hasItems = cartCtx.items.length > 0;
 
@@ -112,7 +112,7 @@ const Cart = (props) => {
       <span>Tax (10%) </span>
       <span>{tax}</span>
       <div className={styles.total}>
-        <span>Total Amount</span>
+        <span>Total Amount (plus shipping)</span>
         <span>{totalAmountIncTax}</span>
       </div>
       <span className={styles.actions}>

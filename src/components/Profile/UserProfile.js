@@ -4,7 +4,8 @@ import styles from "./UserProfile.module.css";
 const UserProfile = () => {
   return (
     <section className={styles.profile}>
-      <h1>Your User Profile</h1>
+      <div className="mx-5 px-5"> " "</div>
+      <h1 className="mx-5">Your User Profile</h1>
       <ProfileForm />
     </section>
   );

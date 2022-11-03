@@ -1,4 +1,3 @@
-import Card from "../UI/Card";
 import shirtHeaderImg from "../../assets/test.png";
 import booksHeader from "../../assets/booksHeader.png";
 import styles from "./WelcomeFunctional.module.css";

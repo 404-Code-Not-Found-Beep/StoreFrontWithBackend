@@ -30,7 +30,7 @@ const CheckoutPage = () => {
   //change this so we still use cartCtx.totalAmount but change cartCtx to the local storage
   const totalAmountExTax = `£${totalAmountLocal.toFixed(2)}`;
   const tax = `£${(totalAmountLocal * 0.1).toFixed(2)}`;
-  const totalAmountIncTax = `£${(totalAmountLocal * 1.1).toFixed(2)}`;
+  const totalAmountIncTax = `£${(totalAmountLocal * 1.1 + 20).toFixed(2)}`;
 
   const hasItems = cartCtx.items.length > 0;
 
@@ -151,6 +151,8 @@ const CheckoutPage = () => {
           </div>
           <span>Tax (10%) </span>
           <span>{tax}</span>
+          <div>Shipping £20</div>
+
           <div className={styles.total}>
             <span>Total Amount</span>
             <span>{totalAmountIncTax}</span>

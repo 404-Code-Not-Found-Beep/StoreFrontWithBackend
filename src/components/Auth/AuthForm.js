@@ -23,18 +23,14 @@ const AuthForm = () => {
 
     const enteredEmail = emailInputRef.current.value;
     const enteredPassword = passwordInputRef.current.value;
-    //add validation here
-
     setIsLoading(true);
-
-    //this if else is done by getting the url if logged in or not and attach
-    // the url to the same fetch function as the code is the same
     let url;
     if (isLogin) {
+      //if the user is logged in already theyll use this url
       url =
         "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCgRHlUchXGRr-INpUrbAV_ID9eIo1ery4";
     } else {
-      //can create your own custom hook, redux etc but we are going to use fetch
+      //if the user is not logged in it means theyre making a new account so will use this url
       url =
         "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCgRHlUchXGRr-INpUrbAV_ID9eIo1ery4";
     }
@@ -53,38 +49,23 @@ const AuthForm = () => {
         setIsLoading(false);
         if (response.ok) {
           localStorage.setItem("username", enteredEmail);
-          // return the response json with no promise (the .then in the else)
           return response.json();
         } else {
-          //error
           return response.json().then((data) => {
             let errorMessage = "Something went wrong";
             if (data && data.error && data.error.message) {
               errorMessage = data.error.message;
             }
-            //forwards the error message to the catch block at the end by
-            // throwing the error, causing this promis and the outer promise to be rejected
             throw new Error(errorMessage);
-            //can parse into the .message and match it and show custom errors
           });
         }
       })
       .then((data) => {
-        //we will end up here if we have a successful request
-        //so we know that direbase will have returned a token
         console.log(data);
-        //calling the login function in auth-Context
-        //login function wants the token so inside data from firebase theres a
-        //field called idToken
-
-        //the time given back from firebase (expiresIn) is in seconds not milliseconds
-        //+data.expires is to convert the string to a int
         const expirationTime = new Date(
           new Date().getTime() + +data.expiresIn * 1000
         );
-        //expirationTime needs to be handed too for profile form
         authCtx.login(data.idToken, expirationTime.toISOString());
-        //redirect
         navigate("/");
       })
       .catch((err) => {

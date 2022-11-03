@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import OrderedItem from "./OrderedItem";
+
 import styles from "./ProfilePastOrders.module.css";
 import Card from "../UI/Card";
 import PastOrders from "./PastOrders";
