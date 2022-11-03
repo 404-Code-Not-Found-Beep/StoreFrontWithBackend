@@ -1,0 +1,28 @@
+@keyframes Ripple {
+  0% {
+    opacity: 0;
+    scale: 0.5;
+  }
+  35% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    scale: 3.25;
+  }
+}
+
+.rippleShape {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  width: 80px;
+  height: 80px;
+  margin-top: -40px;
+  margin-left: -40px;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  background: #d42869;
+  animation: ripple 1s both;
+}
