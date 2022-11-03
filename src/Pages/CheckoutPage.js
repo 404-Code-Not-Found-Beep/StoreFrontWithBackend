@@ -1,10 +1,7 @@
 import React, { useContext, useState } from "react";
-//import { useNavigate } from "react-router-dom";
 import CartItem from "../components/Cart/CartItem";
-// import SendEmail from "./SendEmail";
 import styles from "../components/Cart/Cart.module.css";
 import CartContext from "../store/cart-context";
-//import AuthContext from "../store/auth-context";
 import CheckoutFunctionalBootstrap from "../components/Checkout/CheckoutFunctionalBootstrap";
 
 const CheckoutPage = () => {
