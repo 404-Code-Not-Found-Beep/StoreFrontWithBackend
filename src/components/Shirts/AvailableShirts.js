@@ -1,6 +1,6 @@
 import Card from "../UI/Card";
 import ShirtItem from "./ShirtItem/ShirtItem";
-import classes from "./AvailableShirts.module.css";
+import styles from "./AvailableShirts.module.css";
 import { useEffect, useState } from "react";
 
 const AvailableShirts = () => {
@@ -48,7 +48,7 @@ const AvailableShirts = () => {
 
   if (isLoading) {
     return (
-      <section className={classes.ShirtsLoading}>
+      <section className={styles.ShirtsLoading}>
         <p> Loading... </p>
       </section>
     );
@@ -56,7 +56,7 @@ const AvailableShirts = () => {
 
   if (httpError) {
     return (
-      <section className={classes.ShirtsError}>
+      <section className={styles.ShirtsError}>
         <p> {httpError} </p>
       </section>
     );
@@ -73,7 +73,7 @@ const AvailableShirts = () => {
   ));
 
   return (
-    <section className={classes.shirts}>
+    <section className={styles.shirts}>
       <Card>
         <ul>{shirtsList}</ul>
       </Card>

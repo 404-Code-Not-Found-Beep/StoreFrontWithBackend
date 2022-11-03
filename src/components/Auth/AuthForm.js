@@ -1,6 +1,6 @@
 import { useState, useRef, useContext } from "react";
 import AuthContext from "../../store/auth-context";
-import classes from "./AuthForm.module.css";
+import styles from "./AuthForm.module.css";
 
 import { useNavigate } from "react-router-dom";
 
@@ -94,10 +94,10 @@ const AuthForm = () => {
   };
 
   return (
-    <section className={classes.auth}>
+    <section className={styles.auth}>
       <h1>{isLogin ? "Login" : "Sign Up"}</h1>
       <form onSubmit={submitHandler}>
-        <div className={classes.control}>
+        <div className={styles.control}>
           <label htmlFor="email">Your Email</label>
           <input
             type="email"
@@ -107,7 +107,7 @@ const AuthForm = () => {
             ref={emailInputRef}
           />
         </div>
-        <div className={classes.control}>
+        <div className={styles.control}>
           <label htmlFor="password">Your Password</label>
           <input
             type="password"
@@ -118,7 +118,7 @@ const AuthForm = () => {
           />
         </div>
 
-        <div className={classes.actions}>
+        <div className={styles.actions}>
           {!isLoading && (
             <button data-cy="submitSignup">
               {isLogin ? "Login" : "Create Account"}
@@ -127,7 +127,7 @@ const AuthForm = () => {
           {isLoading && <p>Sending Request</p>}
           <button
             type="button"
-            className={classes.toggle}
+            className={styles.toggle}
             onClick={switchAuthModeHandler}
           >
             {isLogin ? "Create new account" : "Login with existing account"}

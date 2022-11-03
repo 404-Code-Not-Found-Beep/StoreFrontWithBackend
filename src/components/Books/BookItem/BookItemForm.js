@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 
 import Input from "../../UI/Input";
-import classes from "./BookItemForm.module.css";
+import styles from "./BookItemForm.module.css";
 
 const BookItemForm = (props) => {
   const [amountIsValid, setAmountIsValid] = useState(true);
@@ -26,7 +26,7 @@ const BookItemForm = (props) => {
   };
 
   return (
-    <form className={classes.form} onSubmit={submitHandler}>
+    <form className={styles.form} onSubmit={submitHandler}>
       <Input
         ref={amountInputRef}
         label="Amount"

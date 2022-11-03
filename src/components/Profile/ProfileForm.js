@@ -1,4 +1,4 @@
-import classes from "./ProfileForm.module.css";
+import styles from "./ProfileForm.module.css";
 import { useRef, useContext, useState } from "react";
 import AuthContext from "../../store/auth-context";
 import { useNavigate } from "react-router-dom";
@@ -50,15 +50,15 @@ const ProfileForm = () => {
 
   return (
     <React.Fragment>
-      <div className={classes.action}>
+      <div className={styles.action}>
         <button onClick={changePasswordHandler}> Change password</button>
       </div>
-      <div className={classes.action}>
+      <div className={styles.action}>
         <button onClick={showOrdersHandler}> Show past orders</button>
       </div>
       {passwordBtnPressed && (
-        <form className={classes.form} onSubmit={submitHandler}>
-          <div className={classes.control}>
+        <form className={styles.form} onSubmit={submitHandler}>
+          <div className={styles.control}>
             <label htmlFor="new-password">New Password</label>
             <input
               type="password"
@@ -67,7 +67,7 @@ const ProfileForm = () => {
               ref={newPasswordInputRef}
             />
           </div>
-          <div className={classes.action}>
+          <div className={styles.action}>
             <button>Change Password</button>
           </div>
         </form>

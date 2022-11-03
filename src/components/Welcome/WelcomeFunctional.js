@@ -1,4 +1,3 @@
-import FancyButton from "../UI/FancyButton";
 import Card from "../UI/Card";
 import shirtHeaderImg from "../../assets/test.png";
 import booksHeader from "../../assets/booksHeader.png";
@@ -19,8 +18,6 @@ const WelcomeFunctional = () => {
 
   return (
     <section>
-      <FancyButton />
-
       <div className={styles.card} onClick={navHandlerShirts}>
         <div>
           <h2> Shirts</h2>

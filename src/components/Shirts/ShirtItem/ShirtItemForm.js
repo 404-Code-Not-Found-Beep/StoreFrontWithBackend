@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 
 import Input from "../../UI/Input";
-import classes from "./ShirtItemForm.module.css";
+import styles from "./ShirtItemForm.module.css";
 
 const ShirtItemForm = (props) => {
   const [amountIsValid, setAmountIsValid] = useState(true);
@@ -26,7 +26,7 @@ const ShirtItemForm = (props) => {
   };
 
   return (
-    <form className={classes.form} onSubmit={submitHandler}>
+    <form className={styles.form} onSubmit={submitHandler}>
       <Input
         ref={amountInputRef}
         label="Amount"

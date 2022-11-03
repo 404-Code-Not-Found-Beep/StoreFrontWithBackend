@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import Modal from "../UI/Modal";
 import CartItem from "./CartItem";
-import classes from "./Cart.module.css";
+import styles from "./Cart.module.css";
 import CartContext from "../../store/cart-context";
 
 import AuthContext from "../../store/auth-context";
@@ -58,7 +58,7 @@ const Cart = (props) => {
   let products = JSON.parse(localStorage.getItem("items"));
 
   const cartItems = (
-    <ul className={classes["cart-items"]}>
+    <ul className={styles["cart-items"]}>
       {products.map((item) => (
         <CartItem
           key={item.id}
@@ -74,27 +74,27 @@ const Cart = (props) => {
   );
 
   const modalActions = (
-    <div className={classes.actions}>
-      <button className={classes["button--alt"]} onClick={props.onClose}>
+    <div className={styles.actions}>
+      <button className={styles["button--alt"]} onClick={props.onClose}>
         Close
       </button>
       {hasItems && authCtx.isLoggedIn && (
         <Link to="/checkout">
-          <button className={classes.button} onClick={props.onClose}>
+          <button className={styles.button} onClick={props.onClose}>
             Order as logged in user
           </button>
         </Link>
       )}
       {hasItems && !authCtx.isLoggedIn && (
         <Link to="/checkout">
-          <button className={classes.button} onClick={props.onClose}>
+          <button className={styles.button} onClick={props.onClose}>
             Order without logging in
           </button>
         </Link>
       )}
       {hasItems && !authCtx.isLoggedIn && (
         <Link to="/auth">
-          <button className={classes.button} onClick={props.onClose}>
+          <button className={styles.button} onClick={props.onClose}>
             login
           </button>
         </Link>
@@ -105,18 +105,18 @@ const Cart = (props) => {
   const cartModalContent = (
     <React.Fragment>
       {cartItems}
-      <div className={classes.total}>
+      <div className={styles.total}>
         <span>Total ex Tax</span>
         <span>{totalAmountExTax}</span>
       </div>
       <span>Tax (10%) </span>
       <span>{tax}</span>
-      <div className={classes.total}>
+      <div className={styles.total}>
         <span>Total Amount</span>
         <span>{totalAmountIncTax}</span>
       </div>
-      <span className={classes.actions}>
-        <button className={classes.button} onClick={cartItemsRemoverHandler}>
+      <span className={styles.actions}>
+        <button className={styles.button} onClick={cartItemsRemoverHandler}>
           Empty Cart
         </button>
       </span>

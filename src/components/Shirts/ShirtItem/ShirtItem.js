@@ -1,7 +1,7 @@
 import { useContext } from "react";
 
 import ShirtItemForm from "./ShirtItemForm";
-import classes from "./ShirtItem.module.css";
+import styles from "./ShirtItem.module.css";
 import CartContext from "../../../store/cart-context";
 
 const ShirtItem = (props) => {
@@ -20,13 +20,13 @@ const ShirtItem = (props) => {
   };
 
   return (
-    <li className={classes.shirt}>
+    <li className={styles.shirt}>
       <div>
         <h3>{props.name}</h3>
-        <div className={classes.description}>
+        <div className={styles.description}>
           <img src={props.image} alt="shirts" width="150" height="150" />
         </div>
-        <div className={classes.price}>{price}</div>
+        <div className={styles.price}>{price}</div>
       </div>
       <div>
         <ShirtItemForm onAddToCart={addToCartHandler} />

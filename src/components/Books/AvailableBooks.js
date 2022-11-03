@@ -1,6 +1,6 @@
 import Card from "../UI/Card";
 import BookItem from "./BookItem/BookItem";
-import classes from "./AvailableBooks.module.css";
+import styles from "./AvailableBooks.module.css";
 import { useEffect, useState } from "react";
 
 const AvailableBooks = () => {
@@ -48,7 +48,7 @@ const AvailableBooks = () => {
 
   if (isLoading) {
     return (
-      <section className={classes.BooksLoading}>
+      <section className={styles.BooksLoading}>
         <p> Loading... </p>
       </section>
     );
@@ -56,7 +56,7 @@ const AvailableBooks = () => {
 
   if (httpError) {
     return (
-      <section className={classes.BooksError}>
+      <section className={styles.BooksError}>
         <p> {httpError} </p>
       </section>
     );
@@ -73,7 +73,7 @@ const AvailableBooks = () => {
   ));
 
   return (
-    <section className={classes.books}>
+    <section className={styles.books}>
       <Card>
         <ul>{booksList}</ul>
       </Card>
