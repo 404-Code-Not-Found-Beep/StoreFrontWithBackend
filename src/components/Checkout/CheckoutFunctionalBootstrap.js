@@ -65,35 +65,20 @@ const CheckoutFunctionalBootstrap = (props) => {
       <Row className="mb-3">
         <Form.Group as={Col} md="4" controlId="validationCustom01">
           <Form.Label>First name</Form.Label>
-          <Form.Control
-            required
-            type="text"
-            placeholder="First name"
-            defaultValue="jafahdflj"
-          />
+          <Form.Control required type="text" placeholder="First name" />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="4" controlId="validationCustom02">
           <Form.Label>Last name</Form.Label>
 
-          <Form.Control
-            required
-            type="text"
-            placeholder="Last name"
-            defaultValue="jafahdflj"
-          />
+          <Form.Control required type="text" placeholder="Last name" />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
       </Row>
       <Row className="mb-3">
         <Form.Group as={Col} md="6" controlId="validationCustom03">
           <Form.Label>Street</Form.Label>
-          <Form.Control
-            required
-            type="text"
-            placeholder="Address"
-            defaultValue="jafahdflj"
-          />
+          <Form.Control required type="text" placeholder="Address" />
           <Form.Control.Feedback type="invalid">
             Please provide a valid Address.
           </Form.Control.Feedback>
@@ -101,12 +86,7 @@ const CheckoutFunctionalBootstrap = (props) => {
         </Form.Group>
         <Form.Group as={Col} md="6" controlId="validationCustom04">
           <Form.Label>House Number</Form.Label>
-          <Form.Control
-            required
-            type="text"
-            placeholder="House Number/Name"
-            defaultValue="jafahdflj"
-          />
+          <Form.Control required type="text" placeholder="House Number/Name" />
           <Form.Control.Feedback type="invalid">
             Please provide a valid Number/Name.
           </Form.Control.Feedback>
@@ -116,24 +96,14 @@ const CheckoutFunctionalBootstrap = (props) => {
       <Row className="mb-3">
         <Form.Group as={Col} md="6" controlId="validationCustom05">
           <Form.Label>City</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="City"
-            required
-            defaultValue="jafahdflj"
-          />
+          <Form.Control type="text" placeholder="City" required />
           <Form.Control.Feedback type="invalid">
             Please provide a valid city.
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="3" controlId="validationCustom06">
           <Form.Label>State</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="State"
-            required
-            defaultValue="jafahdflj"
-          />
+          <Form.Control type="text" placeholder="State" required />
           <Form.Control.Feedback type="invalid">
             Please provide a valid state.
           </Form.Control.Feedback>
@@ -146,7 +116,6 @@ const CheckoutFunctionalBootstrap = (props) => {
             required
             minLength={3}
             maxLength={5}
-            defaultValue="jafahdflj"
           />
           <Form.Control.Feedback type="invalid">
             Please provide a valid zip.

@@ -11,7 +11,6 @@ import CartContext from "../store/cart-context";
 import CheckoutFunctionalBootstrap from "../components/Checkout/CheckoutFunctionalBootstrap";
 
 const CheckoutPage = () => {
-  //  const navigate = useNavigate;
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [didSubmit, setDidSubmit] = useState(false);
 
@@ -42,8 +41,8 @@ const CheckoutPage = () => {
     cartCtx.addItem({ ...item, amount: 1 });
   };
 
-  let userInfo = [];
-  let items = [];
+  //let userInfo = [];
+  //  let items = [];
   const sendEmailHandler = (userInfo, items) => {
     //using the user data object and the items array
     let hashedCard = userInfo.ccNumber;
@@ -70,7 +69,7 @@ const CheckoutPage = () => {
       " " +
       userInfo.ccName +
       " " +
-      userInfo.ccNumber +
+      hashedCard +
       " " +
       userInfo.ccExpiration +
       " " +
@@ -95,7 +94,7 @@ const CheckoutPage = () => {
 
   const submitOrderHandler = async (userData) => {
     setIsSubmitting(true);
-    const response = await fetch(url, {
+    await fetch(url, {
       method: "POST",
       body: JSON.stringify({
         user: userData,

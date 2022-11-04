@@ -4,7 +4,7 @@
 //it renders the "cartitem" component pushing the props from localstorage into it
 //authCtx is uses to check if the user is logged in or not
 
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
 import Modal from "../UI/Modal";
@@ -15,9 +15,6 @@ import CartContext from "../../store/cart-context";
 import AuthContext from "../../store/auth-context";
 
 const Cart = (props) => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [didSubmit, setDidSubmit] = useState(false);
-
   const cartCtx = useContext(CartContext);
   const authCtx = useContext(AuthContext);
 
@@ -114,11 +111,7 @@ const Cart = (props) => {
     </React.Fragment>
   );
 
-  return (
-    <Modal onClose={props.onClose}>
-      {!isSubmitting && !didSubmit && cartModalContent}
-    </Modal>
-  );
+  return <Modal onClose={props.onClose}>{cartModalContent}</Modal>;
 };
 
 export default Cart;
