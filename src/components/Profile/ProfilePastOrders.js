@@ -1,3 +1,7 @@
+//this component renders the user's past orders
+//using localstorage to get the username and fetching from the firebasedatabase
+//
+
 import { useEffect, useState } from "react";
 
 import styles from "./ProfilePastOrders.module.css";

@@ -1,3 +1,6 @@
+//this components renders the ordereditem component and pushes props
+//given by the ProfilePastOrders component
+
 import OrderedItem from "./OrderedItem";
 const PastOrders = (props) => {
   const ordersList = props.values.map((order) => (

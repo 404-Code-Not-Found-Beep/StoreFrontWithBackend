@@ -1,3 +1,8 @@
+//this component contains the code to send the order to the database
+//in future this could be separated into separate components
+//it uses a bootstrap form
+//it is rendered by the checkout page and uses props to send the form's data to it
+
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
@@ -220,7 +225,7 @@ const CheckoutFunctionalBootstrap = (props) => {
             maxLength={50}
           />
           <Form.Control.Feedback type="invalid">
-            Please provide a month/year format.
+            Please provide a valid email.
           </Form.Control.Feedback>
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>

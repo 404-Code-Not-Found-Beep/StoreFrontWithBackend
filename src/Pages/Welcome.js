@@ -1,4 +1,5 @@
-//import { Route } from "react-router-dom";
+//this component renders the welcome page
+
 import WelcomeFunctional from "../components/Welcome/WelcomeFunctional";
 const Welcome = () => {
   return (

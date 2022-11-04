@@ -1,3 +1,6 @@
+//this component gets props from the "cart" component
+//and renders the items
+
 import styles from "./CartItem.module.css";
 
 const CartItem = (props) => {

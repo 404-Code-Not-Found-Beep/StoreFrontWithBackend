@@ -1,3 +1,6 @@
+//this component renders the user's previous order's items
+//it gets its props and is rendered by the past orders component
+
 import styles from "./OrderedItem.module.css";
 const OrderedItem = (props) => {
   return (

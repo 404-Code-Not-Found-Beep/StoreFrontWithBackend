@@ -1,3 +1,6 @@
+//this component renders whatever is given to it via props
+//it is a small user interface component to be used multiple times
+
 import React from "react";
 
 import styles from "./Input.module.css";

@@ -1,3 +1,10 @@
+//this component renders a Modal
+//portals are used to render components that are not in this specific DOM heirarchy
+//this can be seen in index.html
+//there are two divs for data to be rendered inside
+//this is being rendered inside the overlays div
+//this component creates two components, one for the Backdrop
+//behind the modal and the other is the actual modal
 import { Fragment } from "react";
 import ReactDOM from "react-dom";
 

@@ -1,3 +1,6 @@
+//this component renders the cartIcon and renders a full cart Button
+//it uses cartCtx to get the items
+
 import { useEffect, useState } from "react";
 import { useContext } from "react";
 
@@ -10,7 +13,7 @@ const HeaderCartButton = (props) => {
   const cartCtx = useContext(CartContext);
 
   const { items } = cartCtx;
-  // GET RID OF CARTCTX, NOW USE THE LOCALSTORAGE
+  // another way would be to get delete the ctx and use local storage
 
   // let items = JSON.parse(localStorage.getItem("items"));
   // //set local storage if there is none

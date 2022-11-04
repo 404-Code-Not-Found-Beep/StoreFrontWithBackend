@@ -1,3 +1,5 @@
+//this component could also be named "shirts page" as it
+//renders the "shirts summary" and "loadedshirts"
 import { Fragment } from "react";
 
 import ShirtsSummary from "./ShirtsSummary";

@@ -1,3 +1,8 @@
+//this is where the root is rendered
+//app.js is encapsulated inside the browser router (using react-router version 6)
+//and also the AuthContextProvider which means anything inside of it can use the authctx
+//bootstrap is also imported here
+
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { AuthContextProvider } from "./store/auth-context";

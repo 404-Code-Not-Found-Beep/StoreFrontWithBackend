@@ -1,3 +1,7 @@
+//this is the main component
+//it contains the routes for the whole application
+//the cart provider is encapsulating  each route here to be used anywhere in the application
+
 import { useState } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import { useContext } from "react";

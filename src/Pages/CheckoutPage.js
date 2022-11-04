@@ -1,3 +1,9 @@
+//this component renders the checkout page, it uses the cartItem and CheckoutFunctionalBootstrap
+//component and pushes props to them both
+//this component posts to the firebasedatabase and also
+//is the functional code that recieves the user data and items ordered to email
+//the user using rapid api sendgrid
+
 import React, { useContext, useState } from "react";
 import CartItem from "../components/Cart/CartItem";
 import styles from "../components/Cart/Cart.module.css";
@@ -24,7 +30,6 @@ const CheckoutPage = () => {
   if (totalAmountLocal === null) {
     totalAmountLocal = 0;
   }
-  //change this so we still use cartCtx.totalAmount but change cartCtx to the local storage
   const totalAmountExTax = `£${totalAmountLocal.toFixed(2)}`;
   const tax = `£${(totalAmountLocal * 0.1).toFixed(2)}`;
   const totalAmountIncTax = `£${(totalAmountLocal * 1.1 + 20).toFixed(2)}`;
@@ -103,9 +108,6 @@ const CheckoutPage = () => {
     sendEmailHandler(userData, cartCtx.items);
   };
 
-  // doesnt work
-  //navigate("/profile");
-  // className="w-25 p-3"
   const cartItems = (
     <ul className={styles["cart-items"]}>
       {products.map((item) => (

@@ -1,4 +1,4 @@
-import shirtHeaderImg from "../../assets/test.png";
+import shirtHeaderImg from "../../assets/shirtHeader.png";
 import booksHeader from "../../assets/booksHeader.png";
 import styles from "./WelcomeFunctional.module.css";
 

@@ -1,3 +1,8 @@
+//this component renders "shirtItem" and gives it it's props
+//from fetching the data from the firebasedatabase
+
+//notice useEffect has no dependancies meaning it only runs on load
+
 import Card from "../UI/Card";
 import ShirtItem from "./ShirtItem/ShirtItem";
 import styles from "./LoadedShirts.module.css";

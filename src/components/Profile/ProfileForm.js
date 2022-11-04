@@ -1,3 +1,7 @@
+//this component renders the ProfilePastOrders component and also the
+//change password button
+//it updates the user's password via a post fetch request to the firebasedatabase
+
 import styles from "./ProfileForm.module.css";
 import { useRef, useContext, useState } from "react";
 import AuthContext from "../../store/auth-context";

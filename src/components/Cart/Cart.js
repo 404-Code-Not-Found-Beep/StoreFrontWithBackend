@@ -1,3 +1,9 @@
+//this component renders the cart as a modal popup
+//it uses cartCtx to add and remove items
+//and uses local storage to get the items to display
+//it renders the "cartitem" component pushing the props from localstorage into it
+//authCtx is uses to check if the user is logged in or not
+
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -20,7 +26,6 @@ const Cart = (props) => {
   if (totalAmountLocal === null) {
     totalAmountLocal = 0;
   }
-  //change this so we still use cartCtx.totalAmount but change cartCtx to the local storage
   const totalAmountExTax = `£${totalAmountLocal.toFixed(2)}`;
   const tax = `£${(totalAmountLocal * 0.1).toFixed(2)}`;
   const totalAmountIncTax = `£${(totalAmountLocal * 1.1 + 20).toFixed(2)}`;
@@ -39,22 +44,6 @@ const Cart = (props) => {
     cartCtx.clearCart();
   };
 
-  const submitOrderHandler = async (userData) => {
-    setIsSubmitting(true);
-    const response = await fetch(
-      "https://capstone-1-334cc-default-rtdb.europe-west1.firebasedatabase.app/orders.json",
-      {
-        method: "POST",
-        body: JSON.stringify({
-          user: userData,
-          orderedItems: cartCtx.items,
-        }),
-      }
-    );
-    setIsSubmitting(false);
-    setDidSubmit(true);
-    cartCtx.clearCart();
-  };
   let products = JSON.parse(localStorage.getItem("items"));
 
   const cartItems = (
@@ -93,7 +82,7 @@ const Cart = (props) => {
         </Link>
       )}
       {hasItems && !authCtx.isLoggedIn && (
-        <Link to="/auth">
+        <Link to="/Login">
           <button className={styles.button} onClick={props.onClose}>
             login
           </button>

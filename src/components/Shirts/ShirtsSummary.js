@@ -1,3 +1,5 @@
+//this component renders the header style information for the shirts page
+
 import styles from "./ShirtsSummary.module.css";
 
 const ShirtsSummary = () => {

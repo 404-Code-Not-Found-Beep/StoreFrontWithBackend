@@ -1,3 +1,5 @@
+//this component renders the ProfileForm component
+
 import ProfileForm from "./ProfileForm";
 import styles from "./UserProfile.module.css";
 

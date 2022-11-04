@@ -1,3 +1,6 @@
+//this component could also be named "books page" as it
+//renders the "books summary" and "loadedBooks"
+
 import { Fragment } from "react";
 
 import BooksSummary from "./BooksSummary";

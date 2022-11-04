@@ -1,10 +1,16 @@
+//this component renders the header for each page
+//depending on the page displayed it renders a different image
+//depending if the user is logged in or not it will display dynamic content
+//it is rendered inside the App component and gets props in the form of
+//on show cart or not by dynamically rendering the headercartbutton
+
 import { Fragment } from "react";
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import AuthContext from "../../store/auth-context";
 
 import HeaderCartButton from "./HeaderCartButton";
-import shirtHeaderImg from "../../assets/test.png";
+import shirtHeaderImg from "../../assets/shirtHeader.png";
 import booksHeader from "../../assets/booksHeader.png";
 import checkout from "../../assets/checkout.png";
 import welcome from "../../assets/welcome.png";
@@ -15,6 +21,7 @@ const CartHeader = (props) => {
   const authCtx = useContext(AuthContext);
   const isLoggedIn = authCtx.isLoggedIn;
 
+  //getting the end of the url to dynamically show the header image
   let url = "";
   url = window.location.href;
   url = url.slice(-5, -1);

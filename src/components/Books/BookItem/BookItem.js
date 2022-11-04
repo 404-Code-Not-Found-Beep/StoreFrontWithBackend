@@ -1,3 +1,6 @@
+//this component gets props from "LoadedBooks.js" and displays them
+//it also displays the "BookItemForm.js" component and uses it's
+//props to add to cartCtx via the cart context
 import { useContext } from "react";
 
 import BookItemForm from "./BookItemForm";

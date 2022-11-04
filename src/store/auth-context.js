@@ -1,3 +1,9 @@
+//this component is the functional side to logging in
+//it returns the auth provider
+//it creates a context with the react context api to be used in components
+//instead of creating prop chains
+//
+
 import React, { useState, useEffect, useCallback } from "react";
 
 let logoutTimer;
@@ -5,7 +11,6 @@ let logoutTimer;
 const AuthContext = React.createContext({
   token: "",
   isLoggedIn: false,
-  //can add functions
   login: (token) => {},
   logout: () => {},
 });
@@ -73,7 +78,6 @@ export const AuthContextProvider = (props) => {
 
   useEffect(() => {
     if (tokenData) {
-      //console.log(tokenData.durationLeft);
       logoutTimer = setTimeout(logoutHandler, tokenData.durationLeft);
     }
   }, [tokenData, logoutHandler]);

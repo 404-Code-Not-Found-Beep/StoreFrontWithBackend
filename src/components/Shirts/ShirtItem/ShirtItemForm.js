@@ -1,3 +1,7 @@
+//this component is rendered inside "shirtItem"
+//it adds the entered amount of an item and pushes it to the cart
+//via props
+//it renders the "input" component and pushes the relevant props to it
 import { useRef, useState } from "react";
 
 import Input from "../../UI/Input";

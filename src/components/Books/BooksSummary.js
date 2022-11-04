@@ -1,3 +1,5 @@
+//this component renders the header style information for the books page
+
 import styles from "./BooksSummary.module.css";
 
 const BooksSummary = () => {

@@ -1,3 +1,8 @@
+//this component renders "BookItem" and gives it it's props
+//from fetching the data from the firebasedatabase
+
+//notice useEffect has no dependancies meaning it only runs on load
+
 import Card from "../UI/Card";
 import BookItem from "./BookItem/BookItem";
 import styles from "./LoadedBooks.module.css";
@@ -36,7 +41,7 @@ const LoadedBooks = () => {
         setIsLoading(false);
       };
       //another good reason to put the fetch Books func inside the other func is
-      //we can do this catch for errors
+      //it can catch errors
 
       fetchBooks().catch((error) => {
         setIsLoading(false);

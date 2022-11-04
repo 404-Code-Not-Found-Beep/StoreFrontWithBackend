@@ -1,3 +1,6 @@
+//this component creates a context for the cart
+//local storage is used to set the values incase they havent been set already
+
 import React from "react";
 
 let totalAmountLocal = JSON.parse(localStorage.getItem("totalAmountLocal"));

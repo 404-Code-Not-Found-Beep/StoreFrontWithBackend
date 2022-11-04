@@ -1,3 +1,8 @@
+//this component renders the loginform
+//it uses the authCtx to log or sign the user up
+//using fetch and firebase authentication
+//it gets the token and will log the user in for one hour (line 70/72)
+
 import { useState, useRef, useContext } from "react";
 import AuthContext from "../../store/auth-context";
 import styles from "./LoginForm.module.css";

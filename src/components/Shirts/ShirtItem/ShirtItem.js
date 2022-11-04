@@ -1,3 +1,7 @@
+//this component gets props from "Loadedshirts.js" and displays them
+//it also displays the "shirtItemForm.js" component and uses it's
+//props to add to cartCtx via the cart context
+
 import { useContext } from "react";
 
 import ShirtItemForm from "./ShirtItemForm";

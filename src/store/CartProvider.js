@@ -1,3 +1,7 @@
+//this component is the provider for the cart context
+//it will be given an action and it dispatches a reaction
+//useReducer is used because the state is too complex to use useState
+
 import { useReducer } from "react";
 
 import CartContext from "./cart-context";
