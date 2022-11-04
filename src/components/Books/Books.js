@@ -1,13 +1,13 @@
 import { Fragment } from "react";
 
 import BooksSummary from "./BooksSummary";
-import AvailableBooks from "./AvailableBooks";
+import LoadedBooks from "./LoadedBooks";
 
 const Books = () => {
   return (
     <Fragment>
       <BooksSummary />
-      <AvailableBooks />
+      <LoadedBooks />
     </Fragment>
   );
 };

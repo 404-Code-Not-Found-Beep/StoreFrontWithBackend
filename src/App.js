@@ -8,7 +8,7 @@ import Shirts from "./components/Shirts/Shirts";
 import Cart from "./components/Cart/Cart";
 import CartProvider from "./store/CartProvider";
 import Welcome from "./Pages/Welcome";
-import AuthPage from "./Pages/AuthPage";
+import LoginPage from "./Pages/LoginPage";
 import UserProfile from "./components/Profile/UserProfile";
 import CheckoutPage from "./Pages/CheckoutPage";
 import Books from "./components/Books/Books";
@@ -67,13 +67,13 @@ function App() {
         />
         {!authCtx.isLoggedIn && (
           <Route
-            path="/auth"
+            path="/Login"
             element={
               <CartProvider>
                 {cartIsShown && <Cart onClose={hideCartHandler} />}
                 <CartHeader onShowCart={showCartHandler} />
                 <main>
-                  <AuthPage />
+                  <LoginPage />
                 </main>
               </CartProvider>
             }
@@ -94,7 +94,7 @@ function App() {
           />
         )}
         {!authCtx.isLoggedIn && (
-          <Route path="/profile" element={<Navigate replace to="/auth" />} />
+          <Route path="/profile" element={<Navigate replace to="/Login" />} />
         )}
 
         <Route

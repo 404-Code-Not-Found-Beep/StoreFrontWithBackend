@@ -29,8 +29,6 @@ const CheckoutPage = () => {
   const tax = `£${(totalAmountLocal * 0.1).toFixed(2)}`;
   const totalAmountIncTax = `£${(totalAmountLocal * 1.1 + 20).toFixed(2)}`;
 
-  const hasItems = cartCtx.items.length > 0;
-
   const cartItemRemoveHandler = (id) => {
     cartCtx.removeItem(id);
   };
@@ -42,9 +40,7 @@ const CheckoutPage = () => {
   let userInfo = [];
   let items = [];
   const sendEmailHandler = (userInfo, items) => {
-    //adding the user data object to the items array
-    //items.push({ userInfo });
-    console.log(items);
+    //using the user data object and the items array
     let hashedCard = userInfo.ccNumber;
     hashedCard = hashedCard.slice(-4);
     hashedCard = "**** **** **** " + hashedCard;
@@ -86,10 +82,10 @@ const CheckoutPage = () => {
       body: emailContent,
     };
 
-    fetch("https://rapidprod-sendgrid-v1.p.rapidapi.com/mail/send", options)
-      .then((response) => response.json())
-      .then((response) => console.log(response))
-      .catch((err) => console.error(err));
+    fetch("https://rapidprod-sendgrid-v1.p.rapidapi.com/mail/send", options);
+    //.then((response) => response.json())
+    //.then((response) => console.log(response))
+    //.catch((err) => console.error(err));
   };
 
   const submitOrderHandler = async (userData) => {

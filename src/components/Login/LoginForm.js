@@ -1,10 +1,10 @@
 import { useState, useRef, useContext } from "react";
 import AuthContext from "../../store/auth-context";
-import styles from "./AuthForm.module.css";
+import styles from "./LoginForm.module.css";
 
 import { useNavigate } from "react-router-dom";
 
-const AuthForm = () => {
+const LoginForm = () => {
   const navigate = useNavigate();
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
@@ -61,7 +61,6 @@ const AuthForm = () => {
         }
       })
       .then((data) => {
-        console.log(data);
         const expirationTime = new Date(
           new Date().getTime() + +data.expiresIn * 1000
         );
@@ -119,4 +118,4 @@ const AuthForm = () => {
   );
 };
 
-export default AuthForm;
+export default LoginForm;

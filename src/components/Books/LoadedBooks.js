@@ -1,19 +1,19 @@
 import Card from "../UI/Card";
-import ShirtItem from "./ShirtItem/ShirtItem";
-import styles from "./AvailableShirts.module.css";
+import BookItem from "./BookItem/BookItem";
+import styles from "./LoadedBooks.module.css";
 import { useEffect, useState } from "react";
 
-const AvailableShirts = () => {
-  const [shirts, setShirts] = useState([]);
+const LoadedBooks = () => {
+  const [books, setBooks] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [httpError, setHttpError] = useState(null);
 
   useEffect(
     /*async*/ () => {
       //creating a new function to do the fetch means you can use async, async cannot be used directly on useEffect like above
-      const fetchShirts = async () => {
+      const fetchBooks = async () => {
         const response = await fetch(
-          "https://capstone-1-334cc-default-rtdb.europe-west1.firebasedatabase.app/shirts.json"
+          "https://capstone-1-334cc-default-rtdb.europe-west1.firebasedatabase.app/books.json"
         );
         //if the response is not okay
         if (!response.ok) {
@@ -22,9 +22,9 @@ const AvailableShirts = () => {
 
         const responseData = await response.json();
         //doing this creates an array from the object we recieve in data
-        const loadedShirts = [];
+        const loadedBooks = [];
         for (const key in responseData) {
-          loadedShirts.push({
+          loadedBooks.push({
             id: key,
             name: responseData[key].name,
             image: responseData[key].image,
@@ -32,13 +32,13 @@ const AvailableShirts = () => {
           });
         }
 
-        setShirts(loadedShirts);
+        setBooks(loadedBooks);
         setIsLoading(false);
       };
-      //another good reason to put the fetch shirts func inside the other func is
+      //another good reason to put the fetch Books func inside the other func is
       //we can do this catch for errors
 
-      fetchShirts().catch((error) => {
+      fetchBooks().catch((error) => {
         setIsLoading(false);
         setHttpError(error.message);
       });
@@ -48,7 +48,7 @@ const AvailableShirts = () => {
 
   if (isLoading) {
     return (
-      <section className={styles.ShirtsLoading}>
+      <section className={styles.BooksLoading}>
         <p> Loading... </p>
       </section>
     );
@@ -56,29 +56,29 @@ const AvailableShirts = () => {
 
   if (httpError) {
     return (
-      <section className={styles.ShirtsError}>
+      <section className={styles.BooksError}>
         <p> {httpError} </p>
       </section>
     );
   }
 
-  const shirtsList = shirts.map((shirt) => (
-    <ShirtItem
-      key={shirt.id}
-      id={shirt.id}
-      name={shirt.name}
-      image={shirt.image}
-      price={shirt.price}
+  const booksList = books.map((book) => (
+    <BookItem
+      key={book.id}
+      id={book.id}
+      name={book.name}
+      image={book.image}
+      price={book.price}
     />
   ));
 
   return (
-    <section className={styles.shirts}>
+    <section className={styles.books}>
       <Card>
-        <ul>{shirtsList}</ul>
+        <ul>{booksList}</ul>
       </Card>
     </section>
   );
 };
 
-export default AvailableShirts;
+export default LoadedBooks;

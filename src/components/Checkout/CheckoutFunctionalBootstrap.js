@@ -1,7 +1,6 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
-
 import Row from "react-bootstrap/Row";
 
 import React from "react";
@@ -53,6 +52,8 @@ const CheckoutFunctionalBootstrap = (props) => {
       });
     }
   };
+
+  const noItemsInCart = <h1>Cart is empty</h1>;
 
   const checkoutForm = (
     <Form noValidate validated={validated} onSubmit={submitHandler}>
@@ -227,7 +228,6 @@ const CheckoutFunctionalBootstrap = (props) => {
       <Button type="submit">Confirm Order</Button>
     </Form>
   );
-  const noItemsInCart = <h1>Cart is empty</h1>;
 
   return (
     <React.Fragment>

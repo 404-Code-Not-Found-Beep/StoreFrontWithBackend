@@ -1,13 +1,13 @@
 import { Fragment } from "react";
 
 import ShirtsSummary from "./ShirtsSummary";
-import AvailableShirts from "./AvailableShirts";
+import LoadedShirts from "./LoadedShirts";
 
 const Shirts = () => {
   return (
     <Fragment>
       <ShirtsSummary />
-      <AvailableShirts />
+      <LoadedShirts />
     </Fragment>
   );
 };
