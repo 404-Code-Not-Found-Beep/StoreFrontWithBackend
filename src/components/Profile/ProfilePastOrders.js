@@ -45,6 +45,7 @@ const ProfilePastOrders = () => {
             image: responseData[i].orderedItems[j].image,
             price: responseData[i].orderedItems[j].price,
             orderNumber: i,
+            amount: responseData[i].orderedItems[j].amount,
           });
         }
       }

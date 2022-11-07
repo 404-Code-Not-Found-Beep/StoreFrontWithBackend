@@ -19,7 +19,8 @@ const PastOrders = (props) => {
       id={order.id}
       name={order.name}
       image={order.image}
-      price={`£ ${order.price}`}
+      price={order.price}
+      amount={order.amount}
       onClick={orderPressedHander}
     />
   ));
