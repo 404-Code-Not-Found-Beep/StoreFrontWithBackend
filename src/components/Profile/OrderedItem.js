@@ -4,7 +4,7 @@
 import styles from "./OrderedItem.module.css";
 const OrderedItem = (props) => {
   return (
-    <li className={styles.order}>
+    <li className={styles.order} onClick={props.onClick}>
       <div>
         <h3>{props.name}</h3>
         <div className={styles.description}>
