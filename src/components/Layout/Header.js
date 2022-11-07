@@ -61,7 +61,7 @@ const CartHeader = (props) => {
                   className={(navData) =>
                     navData.isActive ? style.active : ""
                   }
-                  to="/auth"
+                  to="/login"
                 >
                   Log in
                 </NavLink>

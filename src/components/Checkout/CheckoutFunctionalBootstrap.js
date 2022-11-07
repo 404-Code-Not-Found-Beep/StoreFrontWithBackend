@@ -102,23 +102,23 @@ const CheckoutFunctionalBootstrap = (props) => {
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="3" controlId="validationCustom06">
-          <Form.Label>State</Form.Label>
-          <Form.Control type="text" placeholder="State" required />
+          <Form.Label>County</Form.Label>
+          <Form.Control type="text" placeholder="County" required />
           <Form.Control.Feedback type="invalid">
-            Please provide a valid state.
+            Please provide a valid County.
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="3" controlId="validationCustom07">
-          <Form.Label>Zip</Form.Label>
+          <Form.Label>Post Code</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Zip"
+            placeholder="Post Code"
             required
             minLength={3}
             maxLength={5}
           />
           <Form.Control.Feedback type="invalid">
-            Please provide a valid zip.
+            Please provide a valid Post Code.
           </Form.Control.Feedback>
         </Form.Group>
       </Row>
